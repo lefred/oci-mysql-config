@@ -42,7 +42,7 @@ resource "oci_mysql_mysql_configuration" "mds_mysql_configuration" {
 
 		#Optional
 		max_connections = "501"
-                binlog_expire_logs_seconds = "7200"
+        binlog_expire_logs_seconds = "7200"
 	}
 }
 
