@@ -17,6 +17,17 @@ resource "oci_mysql_mysql_db_system" "MDSinstance" {
     count = var.existing_mds_instance_id == "" ? 1 : 0
 
     is_highly_available = var.deploy_ha
+
+    maintenance {
+      window_start_time = "sun 01:00"
+    }
+
+    backup_policy {
+       is_enabled        = "true"
+       retention_in_days = "3"
+       window_start_time = "01:00-00:00"
+    }
+    
 }
 
 
