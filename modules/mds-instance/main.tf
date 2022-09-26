@@ -26,6 +26,11 @@ resource "oci_mysql_mysql_db_system" "MDSinstance" {
        is_enabled        = "true"
        retention_in_days = "3"
        window_start_time = "01:00-00:00"
+       freeform_tags = {"backup_defined_by"="Terraform"}
+       pitr_policy {
+            #Required
+            is_enabled = "true"
+       }
     }
     
 }
